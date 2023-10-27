@@ -7,8 +7,14 @@ const expectedNames = [
   "Book Store Application",
 ];
 
+const textBox = {
+    fullName: 'Barbara Streisand',
+    email: 'star'+ Math.round(Math.random()*1000) + '@hollywood.com',
+    currAddress: 'Green str., 15, Ohio, CA',
+    permAddress: 'Yellow str., 16, Ohio, CA'
+}
 describe("demoQA", () => {
-  it("1st test", () => {
+  it("Text box", () => {
     cy.visit("https://demoqa.com/");
     cy.get("div.card")
       .should("have.length", 6)
@@ -48,13 +54,15 @@ describe("demoQA", () => {
     cy.get("#item-0 > span").contains("Text Box").click();
     cy.url().should("be.equal", "https://demoqa.com/text-box");
     cy.url().should("eql", "https://demoqa.com/text-box");
-    cy.get("#userName").type("john");
+    cy.get("#userName").type(`${textBox.fullName}`);
     cy.wait(1000);
-    cy.get("#userEmail").type("init@mail.com");
-    cy.get("#currentAddress").type(
-      "Brighton str., 12/34, Ohio, CHICAGO, 12345"
-    );
-    cy.get("#permanentAddress").type("the same");
+    cy.get("#userEmail").type(`${textBox.email}`);
+    cy.get("#currentAddress").type(`${textBox.currAddress}`);
+    cy.get("#permanentAddress").type(`${textBox.permAddress}`);
     cy.get("#submit").click();
+    cy.get('#output > div > p:nth-child(1)').should('contain', textBox.fullName)
+    cy.get('#output > div > p:nth-child(2)').should('contain', textBox.email)
+    cy.get('#output > div > p:nth-child(3)').should('contain', textBox.currAddress)
+    cy.get('#output > div > p:nth-child(4)').should('contain', textBox.permAddress)
   });
 });
