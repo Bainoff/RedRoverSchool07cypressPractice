@@ -14,8 +14,10 @@ const textBox = {
     permAddress: 'Yellow str., 16, Ohio, CA'
 }
 describe("demoQA", () => {
-  it("Text box", () => {
+  beforeEach(() => {
     cy.visit("https://demoqa.com/");
+  })
+  it("Text box", () => {
     cy.get("div.card")
       .should("have.length", 6)
       .then(($els) => {
@@ -65,4 +67,14 @@ describe("demoQA", () => {
     cy.get('#output > div > p:nth-child(3)').should('contain', textBox.currAddress)
     cy.get('#output > div > p:nth-child(4)').should('contain', textBox.permAddress)
   });
+  it('Check box', () =>{
+    cy.get("div.card:first-child").as('Elements').click();
+    cy.get('#item-1 .text').contains('Check Box').click();
+    cy.get('.main-header').should('have.text', 'Check Box')
+    cy.get('[title = "Expand all"] > svg').click()
+    setTimeout(1000)
+    cy.get('[title = "Collapse all"] > svg').click()
+    cy.get('[title="Toggle"]:nth-child(1)').click()
+
+  })
 });
