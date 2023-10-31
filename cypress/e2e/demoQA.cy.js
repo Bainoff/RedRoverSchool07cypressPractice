@@ -67,14 +67,21 @@ describe("demoQA", () => {
     cy.get('#output > div > p:nth-child(3)').should('contain', textBox.currAddress)
     cy.get('#output > div > p:nth-child(4)').should('contain', textBox.permAddress)
   });
-  it('Check box', () =>{
+
+  it.only('Check box', () =>{
     cy.get("div.card:first-child").as('Elements').click();
     cy.get('#item-1 .text').contains('Check Box').click();
     cy.get('.main-header').should('have.text', 'Check Box')
-    cy.get('[title = "Expand all"] > svg').click()
-    setTimeout(1000)
-    cy.get('[title = "Collapse all"] > svg').click()
+    cy.get('[title = "Expand all"]').click()
+    cy.wait(1000)
+    cy.get('[title = "Collapse all"]').click()
     cy.get('[title="Toggle"]:nth-child(1)').click()
-
+    cy.get('ol li ol li:nth-child(2) span button').as('documents').click()
+    cy.get('ol li ol li ol li:nth-child(2) button').as('office').click()
+    cy.get('ol li ol li ol li ol li:nth-child(2) span label').as('public').click()
+    cy.get('ol li ol li ol li ol li:nth-child(3) span label').as('public').click()
+    cy.get("span.text-success").should("have.length", 2)
+    cy.get('#result [class="text-success"]:nth-last-child(1)').should('have.text', 'classified')
+    cy.get('#result [class="text-success"]:nth-last-child(2)').should('have.text', 'private')
   })
 });
