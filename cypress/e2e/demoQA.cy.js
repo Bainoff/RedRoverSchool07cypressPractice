@@ -9,7 +9,7 @@ const expectedNames = [
 
 const textBox = {
     fullName: 'Barbara Streisand',
-    email: 'star'+ Math.round(Math.random()*1000) + '@hollywood.com',
+    email: 'star' + Math.round(Math.random()*1000) + '@hollywood.com',
     currAddress: 'Green str., 15, Ohio, CA',
     permAddress: 'Yellow str., 16, Ohio, CA'
 }
