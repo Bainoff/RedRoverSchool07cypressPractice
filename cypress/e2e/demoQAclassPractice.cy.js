@@ -3,6 +3,7 @@
 describe('demoQA', () => {
     it('', () => {
         cy.visit('https://demoqa.com/automation-practice-form')
+        cy.viewport(1920, 1080)
         cy.get('#firstName').type('Mikolka')
         cy.get('#lastName').type('Karapuz').clear().type('Paravoz')
         cy.get('#userEmail').type('hypertrain@mail.cy')
