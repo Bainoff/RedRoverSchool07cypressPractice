@@ -1,4 +1,4 @@
-import header from "../fixtures/headers.json"
+import headers from "../fixtures/headers.json"
 
 describe('headersParam', function () {
     beforeEach(function () {
@@ -9,12 +9,12 @@ describe('headersParam', function () {
         cy.get('#side-panel #tasks a').as('sideMenuLink')
     })
 
-    header.sideMenuName.forEach((linkName, idx) => {
+    headers.sideMenuName.forEach((linkName, idx) => {
         it (`Verify side menu link ${linkName} functionality`, function (){
             cy.wrap(this.sideMenuLink[idx]).click()
 
-            cy.url().should('contain', header.endPointsSideMenu[idx])
-            cy.contains(header.headerPage[idx])
+            cy.url().should('contain', headers.endPointsSideMenu[idx])
+            cy.contains(headers.headerPage[idx])
         })
     })
 })
