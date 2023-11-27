@@ -4,13 +4,21 @@
   "description": "1) install nodeJS\r 2) create folder\r 3) open this folder in vs code\r 4) check if the node js is installed with command \"node -v\"\r 5) npm init\r 6) npm install cypress --save -dev - installing\r 7) npx cypress open",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testus": "npx cypress open",
+    "pretestscript": "npx cypress run --spec cypress/e2e/iFrames.cy.js,cypress/e2e/parametrization.cy.js --browser chrome",
+    "testscript": "npx cypress run --spec cypress/e2e/iFrames.cy.js,cypress/e2e/parametrization.cy.js --browser firefox",
+    "posttestscript": "npx cypress run --spec cypress/e2e/iFrames.cy.js,cypress/e2e/parametrization.cy.js --browser edge"
   },
   "author": "Alexey B.",
   "license": "ISC",
   "dependencies": {
     "-": "^0.0.1",
     "cypress": "^13.3.1",
-    "installing": "^1.0.0"
+    "installing": "^1.0.0",
+    "playwright-webkit": "1.34"
+  },
+  "devDependencies": {
+    "dayjs": "^1.11.10"
   }
 }

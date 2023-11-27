@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('iFrame testing', () => {
-    it.only('click on the element in the iFrame window', () => {
+    it.only(`click on the element in the iFrame window in ${Cypress.browser.name}`, () => {
         cy.visit('https://play1.automationcamp.ir/frames.html')
         cy.get('#frame1')
             .its('0.contentDocument')
