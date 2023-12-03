@@ -15,6 +15,7 @@
   "dependencies": {
     "-": "^0.0.1",
     "cypress": "^13.3.1",
+    "cypress-plugin-api": "^2.11.1",
     "installing": "^1.0.0",
     "playwright-webkit": "1.34"
   },

@@ -7,17 +7,18 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-cypress.Commands.add('createMultiConfigProject', (projectName) => {
-    homepage.clickNewItemLink()
-        .fillInputNameField(projectName)
-        .clickMultiConfigTypeOfProjectBtn()
-        .clickOKbuttonFreestyle()
 
-    homePage.clickDashboardBreadcrumbsLink()
-            .getProjectNameLink()
-            .should('be.visible')
-            .and('have.text', projectName)
-})
+// cypress.Commands.add('createMultiConfigProject', (projectName) => {
+//     homepage.clickNewItemLink()
+//         .fillInputNameField(projectName)
+//         .clickMultiConfigTypeOfProjectBtn()
+//         .clickOKbuttonFreestyle()
+
+//     homePage.clickDashboardBreadcrumbsLink()
+//             .getProjectNameLink()
+//             .should('be.visible')
+//             .and('have.text', projectName)
+// })
 
 //
 //
