@@ -8,7 +8,9 @@
     "testus": "npx cypress open",
     "pretestscript": "npx cypress run --spec cypress/e2e/iFrames.cy.js,cypress/e2e/parametrization.cy.js --browser chrome",
     "testscript": "npx cypress run --spec cypress/e2e/iFrames.cy.js,cypress/e2e/parametrization.cy.js --browser firefox",
-    "posttestscript": "npx cypress run --spec cypress/e2e/iFrames.cy.js,cypress/e2e/parametrization.cy.js --browser edge"
+    "posttestscript": "npx cypress run --spec cypress/e2e/iFrames.cy.js,cypress/e2e/parametrization.cy.js --browser edge",
+    "start": "npx cypress open --e2e --browser chrome",
+    "pom_tests:run": "npx cypress run --spec 'cypress/e2e/*.js' "
   },
   "author": "Alexey B.",
   "license": "ISC",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@cypress/grep": "^4.0.1",
+    "cypress-mochawesome-reporter": "^3.7.0",
     "dayjs": "^1.11.10"
   }
 }
