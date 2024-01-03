@@ -1,11 +1,4 @@
-for (let i = 1; i <= 50; i++) {
-    if (i % (5 * 3) == 0) {
-      console.log("FizzBuzz")
-    } else if (i % 3 == 0) {
-      console.log("Fizz");
-    } else if (i % 5 == 0) {
-      console.log("Buzz");
-    } else {
-      console.log(i);
-    }
-  }
+function noSpace(x){
+  return x.split('').filter(el => x.indexOf(el) === " ").join('')
+ }
+ console.log('hello melloss')
